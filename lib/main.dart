@@ -1,9 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'app_router.dart';
-import 'theme/providers.dart';
+import "package:flutter/material.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
+import "package:flutter_localizations/flutter_localizations.dart";
+import "package:intl/date_symbol_data_local.dart";
+import "app_router.dart";
+import "theme/providers.dart";
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('pl_PL', null);
   runApp(const ProviderScope(child: App()));
 }
 
